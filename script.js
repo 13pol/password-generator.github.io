@@ -7,7 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     copyBtn.addEventListener('click', copyToClipboard);
 
     function generatePassword() {
-        const length = 12;
+        let length = lengthInput.value;
+        if(length>20){
+            length=20;
+        }
+        else if(length<6){
+            length=6;
+        }
         const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]\:;?><,./-=';
         let password = '';
 
